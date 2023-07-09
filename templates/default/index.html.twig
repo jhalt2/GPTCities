@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block stylesheets %}
+<style>
+body {
+    background-image: url("{{ asset(background_url) }}");
+    padding-left: 2em;
+    padding-right: 2em;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+    <h1 style="background-color: white;padding:2em;font-family: fantasy;">AI Website Test</h1>
+
+    <div style="background-color:white;padding:2em;float:left;width:140px;">
+        {{ menu_items|raw }}
+    </div>    
+
+    <div style="background-color: white;padding:2em;text-align:justify;margin-left:140px;">        
+        <img src="{{ asset(content_image_url) }}" style="float:right;margin:2em;">
+        <p>{{ body_text|markdown_to_html }}</p>
+    </div>
+
+{% endblock %}
